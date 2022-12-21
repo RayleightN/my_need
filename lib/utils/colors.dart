@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+const mainGreenColor = Color(0xff15AE62);
+const mainBlueColor = Color(0xff30548B);
+const mainBgColor = Color(0xffF2F3F4);
+const whiteColor = Color(0xffFFFFFF);
+const blackColor = Color(0xff000000);
+const toolBarBgColor = Color(0xffF9F9F9);
+const toolBarBg2Color = Color(0xffF4F6FA);
+const titleTextColor = Color(0xff25282B);
+const subTitleTextColor = Color(0xff969FA2);
+const bodyTextColor = Color(0xff52575C);
+const inactiveIconColor = Color(0xffA0A4A8);
+const hintColor = Color(0xffA3A3A3);
+const btnDisabledColor = Color(0xffD2D1D1);
+const borderDefault = Color(0xffE6E8E9);
+const dangerColor = Color(0xffFC2435);
+const waringColor = Color(0xffFF9519);
+const highlightColor = Color(0xff0BBEE7);
+const infoColor = Color(0xff1F92FC);
+const successColor = Color(0xff05C31A);
+const textErrorColor = Color(0xffEB5757);
+const shadowColor = Color(0xffE5ECF9);
+const loginButtonColor = Colors.lightBlueAccent;
