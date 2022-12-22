@@ -15,3 +15,24 @@ Widget heightBox24 = const SizedBox(
 Widget heightBox16 = const SizedBox(
   height: 16,
 );
+Widget heightBox12 = const SizedBox(
+  height: 12,
+);
+Widget widthBox10 = const SizedBox(
+  width: 10,
+);
+Widget widthBox8 = const SizedBox(
+  width: 8,
+);
+Widget widthBox48 = const SizedBox(
+  width: 48,
+);
+Widget widthBox24 = const SizedBox(
+  width: 24,
+);
+Widget widthBox16 = const SizedBox(
+  width: 16,
+);
+Widget widthBox12 = const SizedBox(
+  width: 12,
+);

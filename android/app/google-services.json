@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "853447288453",
+    "project_id": "my-need-v1",
+    "storage_bucket": "my-need-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853447288453:android:819346addfcd78fbf82bec",
+        "android_client_info": {
+          "package_name": "vn.rayleigh.my_need"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "853447288453-babr96oscgj5o7j4skqf5g8lo8q41poo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4ia8Q9IHeo4wECjbw1BnE4rdzr2pKxA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "853447288453-babr96oscgj5o7j4skqf5g8lo8q41poo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

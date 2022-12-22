@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:my_need/core/keys.dart';
 import 'package:my_need/core/app_router/route_generator.dart';
 import 'package:my_need/core/app_router/routes.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'package:my_need/source/injector.dart';
 import 'core/theme.dart';
 
 Future<void> main() async {
-  runZonedGuarded(() {
+  runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    setupLocator();
     runApp(const RootApp());
   }, (error, stack) {});
 }

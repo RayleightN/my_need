@@ -6,3 +6,4 @@ const double padding12 = 12;
 const double borderRadius32 = 32;
 const double padding24 = 24;
 const double margin24 = 24;
+const double padding8 = 8;
