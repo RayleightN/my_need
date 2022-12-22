@@ -6,6 +6,7 @@ import 'package:my_need/core/widgets/full_width_button.dart';
 import 'package:my_need/core/widgets/sized_box.dart';
 import 'package:my_need/source/presentation/list_task/list_task_screen.dart';
 import 'package:my_need/source/presentation/login/login_screen.dart';
+import 'package:my_need/source/presentation/sign_up/sign_up_screen.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   final args = settings.arguments;
@@ -13,7 +14,13 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case Routes.listTask:
       return pageBuilder(settings: settings, screen: const ListTaskScreen());
     case Routes.login:
-      return pageBuilder(settings: settings, screen: const LoginScreen());
+      return pageBuilder(
+          settings: settings,
+          screen: LoginScreen(
+            loginArgs: args is LoginArgs ? args : null,
+          ));
+    case Routes.signUp:
+      return pageBuilder(settings: settings, screen: SignUpScreen());
     default:
       return _errorRoute(settings.name, args);
   }
@@ -40,6 +47,7 @@ class ErrorScreen extends StatelessWidget {
       body: SafeArea(
           child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Error Page'),
             heightBox10,

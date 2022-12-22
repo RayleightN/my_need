@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_need/core/app_router/navigation_service.dart';
 import 'package:my_need/core/keys.dart';
 import 'package:my_need/core/app_router/route_generator.dart';
 import 'package:my_need/core/app_router/routes.dart';
@@ -13,6 +15,23 @@ Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp();
     setupLocator();
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user != null) {
+        print(user.uid);
+      } else {
+        NavigationService.popUntil(Routes.login);
+      }
+    });
+    FirebaseAuth.instance.idTokenChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+        NavigationService.popUntil(Routes.login);
+      } else {
+        user.getIdToken().then((String token) {
+          print('The user ID token is' + token);
+        });
+      }
+    });
     runApp(const RootApp());
   }, (error, stack) {});
 }
