@@ -10,12 +10,8 @@ class TaskRepositoryImpl implements TaskRepository {
   @override
   Future<DataState<List<TaskModel>>> getListTask() async {
     try {
-      var snap = await _taskApiService.getListTask();
-      if (snap.docs.isNotEmpty) {
-        return DataSuccess(
-            snap.docs.map((e) => TaskModel.fromSnap(e)).toList());
-      }
-      return const DataFailed('empty data');
+      var result = await _taskApiService.getListTask();
+      return DataSuccess(result.map((e) => TaskModel.fromJson(e)).toList());
     } catch (err) {
       return DataFailed(err);
     }

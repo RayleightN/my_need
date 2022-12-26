@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_need/source/domain/entities/task.dart';
 
 class TaskModel extends Task {
@@ -16,15 +15,6 @@ class TaskModel extends Task {
       id: map['id'],
       title: map['title'],
       content: map['content'],
-    );
-  }
-
-  factory TaskModel.fromSnap(QueryDocumentSnapshot snap) {
-    var data = snap.exists ? snap.data() as Map<String, dynamic> : {};
-    return TaskModel(
-      id: snap.id,
-      title: data['title'],
-      content: data['content'],
     );
   }
 }

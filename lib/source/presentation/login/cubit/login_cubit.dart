@@ -1,9 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_need/core/app_repository.dart';
+import 'package:my_need/source/core/usecases/login_usecase.dart';
 import 'package:my_need/source/domain/entities/user.dart';
+import 'package:my_need/source/domain/repositories/auth_repository.dart';
 import 'package:my_need/source/injector.dart';
 import 'package:my_need/source/presentation/login/login_screen.dart';
 
@@ -14,6 +15,7 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   var appRepo = injector<AppRepository>();
+  final LoginUsecase _loginUseCase = injector<LoginUsecase>();
 
   void updateText(LoginArgs loginArgs) {
     emit(LoginInitial());
@@ -23,28 +25,18 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void signIn({required Function onSuccess}) async {
-    try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-      onSuccess.call();
-      updateUserInformation(credential);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
-      }
-    }
+    var result = await _loginUseCase.call(
+        params: LoginParam(
+      email: emailController.text,
+      password: passwordController.text,
+    ));
+    if (result.data != null) updateUserInformation(result.data);
   }
 
-  void updateUserInformation(UserCredential credential) {
+  void updateUserInformation(UserInformation? user) {
     /// TODO: call fire store to update user infor
-    appRepo.user = UserInformation(
-      email: credential.user?.email,
-      id: credential.user?.uid,
-      phone: credential.user?.phoneNumber,
-    );
+    if (user != null) {
+      appRepo.user = user;
+    }
   }
 }
