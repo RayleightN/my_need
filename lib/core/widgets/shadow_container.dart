@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_need/core/constants/size_constant.dart';
+import 'package:my_need/core/widgets/decorations.dart';
 
 class MNShadowContainer extends StatelessWidget {
   const MNShadowContainer(
@@ -24,10 +25,7 @@ class MNShadowContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
-          BoxShadow(
-            offset: const Offset(0, 1),
-            color: Colors.black.withOpacity(0.06),
-          ),
+          boxShadow01,
         ],
         borderRadius: BorderRadius.circular(borderRadius),
       ),

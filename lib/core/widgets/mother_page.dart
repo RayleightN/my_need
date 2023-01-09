@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_need/core/constants/size_constant.dart';
+import 'package:my_need/core/widgets/decorations.dart';
 import 'package:my_need/utils/colors.dart';
 import 'package:my_need/utils/font_scale.dart';
 
@@ -29,8 +30,11 @@ class MNMotherPage extends StatelessWidget {
               children: [
                 Container(
                   height: 30 + kToolbarHeight,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: mainBlueColor,
+                    boxShadow: [
+                      boxShadow01,
+                    ],
                   ),
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: margin16),

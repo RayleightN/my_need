@@ -4,6 +4,7 @@ import 'package:my_need/core/app_router/navigation_service.dart';
 import 'package:my_need/core/app_router/routes.dart';
 import 'package:my_need/core/widgets/full_width_button.dart';
 import 'package:my_need/core/widgets/sized_box.dart';
+import 'package:my_need/source/presentation/home/home_screen.dart';
 import 'package:my_need/source/presentation/list_task/list_task_screen.dart';
 import 'package:my_need/source/presentation/login/login_screen.dart';
 import 'package:my_need/source/presentation/sign_up/sign_up_screen.dart';
@@ -21,6 +22,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
           ));
     case Routes.signUp:
       return pageBuilder(settings: settings, screen: SignUpScreen());
+    case Routes.home:
+      return pageBuilder(settings: settings, screen: const HomeScreen());
     default:
       return _errorRoute(settings.name, args);
   }

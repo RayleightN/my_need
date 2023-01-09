@@ -113,9 +113,10 @@ class LoginScreen extends StatelessWidget {
       child: MNFullWidthButton(
         title: 'Log In',
         onPressed: () {
-          cubit.signIn(onSuccess: () {
-            NavigationService.push(Routes.listTask);
-          });
+          NavigationService.push(Routes.home);
+          // cubit.signIn(onSuccess: () {
+          //   NavigationService.push(Routes.listTask);
+          // });
         },
         isPadding: false,
         borderRadius: borderRadius32,
