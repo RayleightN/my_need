@@ -18,7 +18,7 @@ class FireStoreRequest {
     return await collectionRef.add(data);
   }
 
-  Future<List<dynamic>> getByQuerry({
+  Future<List<dynamic>> getByQuery({
     required String fieldName,
     required String key,
   }) async {
