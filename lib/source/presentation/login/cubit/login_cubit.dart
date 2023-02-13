@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_need/core/app_repository.dart';
-import 'package:my_need/source/core/usecases/login_usecase.dart';
+import 'package:my_need/source/domain/usecases/login_usecase.dart';
 import 'package:my_need/source/domain/entities/user.dart';
 import 'package:my_need/source/domain/repositories/auth_repository.dart';
 import 'package:my_need/source/injector.dart';

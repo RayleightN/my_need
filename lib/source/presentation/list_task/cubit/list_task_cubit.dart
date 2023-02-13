@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:my_need/source/injector.dart';
 
-import '../../../core/usecases/get_list_task_usecase.dart';
+import '../../../domain/usecases/get_list_task_usecase.dart';
 import '../../../domain/entities/task.dart';
 
 part 'list_task_state.dart';
